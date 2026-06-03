@@ -1,0 +1,20 @@
+baseURL = "https://caffeinateddave.com/"
+locale = "en-gb"
+title = "Dave Chaston"
+
+[params]
+  description = "CV, portfolio, and musings."
+  author = "Dave Chaston"
+  email = "dave@caffeinateddave.com"
+  location = "United Kingdom"
+  linkedin = "https://www.linkedin.com/in/caffeinateddave/"
+  github = "https://github.com/caffeinateddave"
+
+[permalinks]
+  blog = "/blog/:year/:month/:slug/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+

@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="page-heading">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="intro">{{ . }}</div>{{ end }}
+</section>
+
+<section class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+    {{ $post := . }}
+    <article>
+      {{ with $post.Params.image }}
+        <a class="post-image" href="{{ $post.RelPermalink }}">
+          <img src="{{ . | relURL }}" alt="{{ $post.Params.imageAlt | default $post.Title }}">
+        </a>
+      {{ end }}
+      <p class="date">{{ .Date.Format "2 Jan 2006" }}</p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Params.summary }}</p>
+    </article>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,87 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ .Params.role }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Params.summary }}</p>
+    <div class="contact-links">
+      <a href="mailto:{{ site.Params.email }}">Email</a>
+      <a href="{{ site.Params.linkedin }}" target="_new">LinkedIn</a>
+      <a href="{{ site.Params.github }}" target="_new">GitHub</a>
+    </div>
+  </div>
+  {{ with .Params.heroImage }}
+    <figure class="hero-image">
+      <img src="{{ . | relURL }}" alt="{{ $.Params.heroImageAlt | default $.Title }}">
+    </figure>
+  {{ end }}
+</section>
+
+<section class="content-grid">
+  <article class="main-content">
+    {{ .Content }}
+  </article>
+
+  <aside class="sidebar">
+    <section>
+      <h2>Focus</h2>
+      <ul>
+        {{ range .Params.focus }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    <section>
+      <h2>Core Skills</h2>
+      <ul class="tag-list">
+        {{ range .Params.skills }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+  </aside>
+</section>
+
+<section class="section">
+  <h2>Experience</h2>
+  <div class="timeline">
+    {{ range .Params.experience }}
+      <article>
+        <h3 class="company">{{ .company }}</h3>
+        {{ range .roles }}
+          <p class="title">{{ .title }}</p>
+          <p class="location">{{ .location }}</p>
+          <p class="date">{{ .dates }}</p>
+          <ul>
+            {{ range .details }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <h2>Latest Posts</h2>
+    <a href="{{ "/blog/" | relURL }}">All posts</a>
+  </div>
+  <div class="post-list">
+    {{ range first 3 ((where site.RegularPages "Section" "blog").ByDate.Reverse) }}
+      {{ $post := . }}
+      <article>
+        {{ with $post.Params.image }}
+          <a class="post-image" href="{{ $post.RelPermalink }}">
+            <img src="{{ . | relURL }}" alt="{{ $post.Params.imageAlt | default $post.Title }}">
+          </a>
+        {{ end }}
+        <p class="date">{{ .Date.Format "2 Jan 2006" }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Params.summary }}</p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
