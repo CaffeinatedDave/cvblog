@@ -2,8 +2,8 @@
 title: "Dave Chaston"
 role: "Engineering Leader"
 summary: "Engineering leader specialising in payments, regulated delivery, operational maturity, and sustainable team performance. Strongest in complex environments where delivery, compliance, reliability, and stakeholder alignment all matter. Looking to solve broader engineering leadership problems across multi-team delivery, engineering culture, operational excellence, and pragmatic adoption of AI and modern tooling."
-heroImage: "/images/profile-placeholder.svg"
-heroImageAlt: "Abstract profile image"
+heroImage: "/images/leadership-course.png"
+heroImageAlt: "Navigation chart and compass with a bold route choosing a different course"
 skills:
   - "Leadership"
   - "Delivery"

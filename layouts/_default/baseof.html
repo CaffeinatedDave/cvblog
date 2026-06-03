@@ -10,7 +10,12 @@
   <body>
     <header class="site-header">
       <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
-      <nav aria-label="Main navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="{{ "/" | relURL }}">CV</a>
         <a href="{{ "/blog/" | relURL }}">Blog</a>
       </nav>
@@ -21,6 +26,7 @@
     <footer class="site-footer">
       <p>{{ site.Params.location }} · <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
     </footer>
+    <script src="{{ "js/navigation.js" | relURL }}"></script>
   </body>
 </html>
 
