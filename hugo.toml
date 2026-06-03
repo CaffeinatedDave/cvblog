@@ -1,5 +1,5 @@
 baseURL = "https://caffeinateddave.com/"
-locale = "en-gb"
+languageCode = "en-gb"
 title = "Dave Chaston"
 
 [params]
@@ -17,4 +17,3 @@ title = "Dave Chaston"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
