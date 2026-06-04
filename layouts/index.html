@@ -77,7 +77,7 @@
             <img src="{{ . | relURL }}" alt="{{ $post.Params.imageAlt | default $post.Title }}">
           </a>
         {{ end }}
-        <p class="date">{{ .Date.Format "2 Jan 2006" }}</p>
+        <p class="post-meta"><span class="date">{{ .Date.Format "2 Jan 2006" }}</span><span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span></p>
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p>{{ .Params.summary }}</p>
       </article>

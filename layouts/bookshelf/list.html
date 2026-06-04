@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="page-heading bookshelf-heading">
+  <p class="eyebrow">Ideas I return to</p>
+  <h1>{{ .Title }}</h1>
+  <p class="intro">{{ .Params.summary }}</p>
+</section>
+
+<section class="book-grid" aria-label="Bookshelf">
+  {{ range .Pages.ByWeight }}
+    <article class="book-card">
+      <img class="book-cover" src="{{ .Params.cover | relURL }}" alt="{{ .Params.coverAlt | default .Title }}">
+      <div class="book-card-content">
+        <header>
+          <h2>{{ .Title }}</h2>
+          <p class="book-author">{{ .Params.author }}</p>
+        </header>
+        <section>
+          <h3>What it's about</h3>
+          <p>{{ .Params.about }}</p>
+        </section>
+        {{ if .Params.takeaway }}
+        <section class="book-takeaway">
+          <h3>What I took from it</h3>
+          <p>{{ .Params.takeaway }}</p>
+        </section>
+        {{ end }}
+      </div>
+    </article>
+  {{ end }}
+</section>
+{{ end }}

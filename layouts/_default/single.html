@@ -1,15 +1,15 @@
 {{ define "main" }}
 <article class="article">
-  <header>
-    <p class="date">{{ .Date.Format "2 Jan 2006" }}</p>
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.summary }}<p class="lede">{{ . }}</p>{{ end }}
-  </header>
   {{ with .Params.image }}
     <figure class="article-image">
       <img src="{{ . | relURL }}" alt="{{ $.Params.imageAlt | default $.Title }}">
     </figure>
   {{ end }}
+  <header class="article-header">
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta"><span class="date">{{ .Date.Format "2 Jan 2006" }}</span><span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span></p>
+    {{ with .Params.summary }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
   <div class="article-body">
     {{ .Content }}
   </div>

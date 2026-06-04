@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.Params.description }}">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
-    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
   </head>
   <body>
     <header class="site-header">
@@ -18,6 +18,7 @@
       <nav id="main-navigation" aria-label="Main navigation">
         <a href="{{ "/" | relURL }}">CV</a>
         <a href="{{ "/blog/" | relURL }}">Blog</a>
+        <a href="{{ "/bookshelf/" | relURL }}">Bookshelf</a>
       </nav>
     </header>
     <main>
@@ -26,7 +27,7 @@
     <footer class="site-footer">
       <p>{{ site.Params.location }} · <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
     </footer>
-    <script src="{{ "js/navigation.js" | relURL }}"></script>
+    <script src="{{ "js/navigation.js" | relURL }}?v={{ site.Params.assetVersion }}"></script>
   </body>
 </html>
 

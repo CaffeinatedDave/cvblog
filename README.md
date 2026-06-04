@@ -6,6 +6,7 @@ This is a small Hugo static site for a CV, profile, and blog. It is designed so 
 
 - Homepage and CV: edit `content/_index.md`
 - Blog posts: add Markdown files to `content/blog/`
+- Bookshelf entries: add Markdown files to `content/bookshelf/`
 - Site name, email, links: edit `hugo.toml`
 
 Blog posts are sorted by date automatically. Newer posts appear first and get URLs from their title/date.
@@ -27,6 +28,17 @@ date: 2026-06-03
 summary: "A short reflection on the shift from delivery to platform work."
 draft: false
 ---
+```
+
+
+## Add A Book
+
+Copy `templates/new-book.md` to `content/bookshelf/book-name.md`, then edit the title, author, cover image, description, and takeaway. Books are ordered using the `weight` field.
+
+Place real cover images in `static/images/books/` and reference them like:
+
+```yaml
+cover: "/images/books/book-name.jpg"
 ```
 
 ## Preview Locally

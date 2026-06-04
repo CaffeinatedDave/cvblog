@@ -24,38 +24,37 @@ experience:
         dates: "Mar 2023 - Present"
         location: Remote / Edinburgh
         details:
-          - "Led delivery of a business-critical platform used by internal teams."
-          - "Improved release confidence by introducing clearer testing and deployment practices."
-          - "Worked across product, engineering, and operations to reduce delivery friction."
+          - "Built a splinter team's out from merely 'team 2' to it's own identity, and then to multiple pods."
+          - "Delivered several key initiatives saving over $139M"
+          - "Mentored multiple engineers to promotions across Interns to Staff engineers, both within and outside of my own team."
+          - "Reduced operational load by over 90%"
   - company: "Sky Betting and Gaming (a Flutter Entertainment Company)"
     roles: 
       - title: "Engineering Manager"
         dates: "Feb 2021 - Mar 2023"
         location: "Leeds / Sheffield / Hybrid"
         details:
-          - "Owned technical delivery across several customer-facing initiatives."
-          - "Mentored engineers and helped establish pragmatic engineering standards."
+          - "As part of the CTAP tribe, lead Promotions, Payments, Safety (RG), Martech, and mobile teams."
+          - "Manager of managers, 5-8 DRs and 40 overall engineers"
+          - "Guided my teams through restructuring and major organisational change."
       - title: "Principal / Lead Software Engineer"
         dates: "Dec 2018 - Feb 2021"
         location: "Leeds / Hybrid"
         details:
-          - "Owned technical delivery across several customer-facing initiatives."
-          - "Mentored engineers and helped establish pragmatic engineering standards."
+          - "Designed, implemented, and evolved real time promotions systems, backed by Kafka"
+          - "Took Prize Machine from a manual daily job to an automated system."
+          - "Successfully took promotions domain through it's first ever SOx audit."
+  - company: "Sky Bet Italia (a Flutter Entertainment Company)"
+    roles: 
       - title: "Senior Software Engineer"
         dates: "Mar 2017 - Dec 2018"
         location: "Sheffield"
-        details:
-          - "Owned technical delivery across several customer-facing initiatives."
-          - "Mentored engineers and helped establish pragmatic engineering standards."
       - title: "Software Engineer" 
         dates: "May 2015 - Mar 2017"
         location: "Sheffield"
-        details:
-          - "Owned technical delivery across several customer-facing initiatives."
-          - "Mentored engineers and helped establish pragmatic engineering standards."
   - company: "OpenBet"
     roles:
-    - title: "Software Engineer / Senior Software Engineer / Tech Lead / Engineering Manager"
+    - title: "Software Developer / Senior Software Developer / Team Lead / Software Engineer"
       dates: "May 2015 - Mar 2023"
       location: London / Copenhagen / Montreal
 education:
