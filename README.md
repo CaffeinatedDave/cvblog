@@ -13,7 +13,7 @@ Blog posts are sorted by date automatically. Newer posts appear first and get UR
 
 ## Add A Blog Post
 
-Copy `templates/new-blog-post.md` to `content/blog/my-new-post.md`, then edit the title, date, summary, and body. If Hugo is installed locally, you can also run:
+Copy `templates/new-blog-post.md` to `content/blog/my-new-post.md`, then edit the title, date, summary, image filename, and body. Blog images live in `static/images/blog/`, and posts should reference only the filename, for example `image: "my-post-image.png"`. If Hugo is installed locally, you can also run:
 
 ```sh
 hugo new blog/my-new-post.md

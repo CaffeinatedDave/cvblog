@@ -9,8 +9,9 @@
     {{ $post := . }}
     <article>
       {{ with $post.Params.image }}
+        {{ $image := printf "images/blog/%s" . }}
         <a class="post-image" href="{{ $post.RelPermalink }}">
-          <img src="{{ . | relURL }}" alt="{{ $post.Params.imageAlt | default $post.Title }}">
+          <img src="{{ $image | relURL }}" alt="{{ $post.Params.imageAlt | default $post.Title }}">
         </a>
       {{ end }}
       <p class="post-meta"><span class="date">{{ .Date.Format "2 Jan 2006" }}</span><span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span></p>

@@ -1,8 +1,8 @@
 ---
 title: "If People Can’t Leave My Team, I’ve Failed Them"
-date: 2026-05-28
+date: 2026-05-24
 summary: "If someone cannot leave without damaging the team, I have failed both them and the team."
-image: "/images/healthy-departures-and-succession.png"
+image: "healthy-departures-and-succession.png"
 imageAlt: "An orange figure moves forward while another steps into greater responsibility within a stable team"
 draft: false
 ---

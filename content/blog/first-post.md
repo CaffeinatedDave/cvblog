@@ -2,7 +2,7 @@
 title: "First Post"
 date: 2026-06-03
 summary: "Protecting a Team Means More Than Just Defending Its Decisions."
-image: "/images/protecting-challenging-voices.png"
+image: "protecting-challenging-voices.png"
 imageAlt: "A distinctive orange figure remaining connected within a protected group"
 draft: true
 ---

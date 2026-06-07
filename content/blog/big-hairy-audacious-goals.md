@@ -1,8 +1,8 @@
 ---
 title: "A Big Goal Is a Direction, Not a Plan."
-date: 2026-06-05
+date: 2026-05-31
 summary: "Ambitious career goals are useful when they give direction, but growth comes from the next small, evidence-building step and regular course correction."
-image: "/images/bhag-direction-not-plan.png"
+image: "bhag-direction-not-plan.png"
 imageAlt: "A North Star above a winding path made from small stepping stones and route markers"
 draft: false
 ---
