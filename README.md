@@ -13,11 +13,13 @@ Blog posts are sorted by date automatically. Newer posts appear first and get UR
 
 ## Add A Blog Post
 
-Copy `templates/new-blog-post.md` to `content/blog/my-new-post.md`, then edit the title, date, summary, image filename, and body. Blog images live in `static/images/blog/`, and posts should reference only the filename, for example `image: "my-post-image.png"`. If Hugo is installed locally, you can also run:
+Run:
 
 ```sh
 hugo new blog/my-new-post.md
 ```
+
+Then edit the title, date, summary, image filename, and body. Blog images live in `static/images/blog/`, and posts should reference only the filename, for example `image: "my-post-image.png"`.
 
 Example front matter:
 
@@ -33,7 +35,13 @@ draft: false
 
 ## Add A Book
 
-Copy `templates/new-book.md` to `content/bookshelf/book-name.md`, then edit the title, author, cover image, description, and takeaway. Books are ordered using the `weight` field.
+Run:
+
+```sh
+hugo new bookshelf/book-name.md
+```
+
+Then edit the title, author, cover image, description, and takeaway. Books are ordered using the `weight` field.
 
 Place real cover images in `static/images/books/` and reference them like:
 
