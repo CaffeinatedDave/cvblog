@@ -1,8 +1,8 @@
 ---
 title: "Delivery Is A Team Behaviour, Not Just A Speed Problem"
-date: 2026-06-12
+date: 2026-06-14
 summary: ""
-image: "blog-default.svg"
+image: "/images/blog-default.svg"
 imageAlt: "Default image"
 draft: true
 ---

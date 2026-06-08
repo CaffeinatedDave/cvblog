@@ -3,7 +3,7 @@ locale = "en-gb"
 title = "Dave Chaston"
 
 [params]
-  assetVersion = "20260604-1"
+  assetVersion = "20260608-2"
   description = "CV, portfolio, and musings."
   author = "Dave Chaston"
   email = "dave@caffeinateddave.com"

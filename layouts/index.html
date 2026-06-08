@@ -17,29 +17,24 @@
   {{ end }}
 </section>
 
-<section class="content-grid">
+<section class="cv-summary">
   <article class="main-content">
     {{ .Content }}
-  </article>
 
-  <aside class="sidebar">
-    <section>
-      <h2>Focus</h2>
-      <ul>
-        {{ range .Params.focus }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-    <section>
-      <h2>Core Skills</h2>
-      <ul class="tag-list">
-        {{ range .Params.skills }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </section>
-  </aside>
+    <h2>Highlights</h2>
+    <ul>
+      {{ range .Params.highlights }}
+        <li>{{ . }}</li>
+      {{ end }} 
+    </ul>
+
+    <h2>Core Skills</h2>
+    <ul class="tag-list">
+      {{ range .Params.skills }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </article>
 </section>
 
 <section class="section">
@@ -52,11 +47,13 @@
           <p class="title">{{ .title }}</p>
           <p class="location">{{ .location }}</p>
           <p class="date">{{ .dates }}</p>
+          {{ if .details }}
           <ul>
             {{ range .details }}
               <li>{{ . }}</li>
             {{ end }}
           </ul>
+          {{ end }}
         {{ end }}
       </article>
     {{ end }}

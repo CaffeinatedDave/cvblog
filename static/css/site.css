@@ -203,25 +203,22 @@ nav a:hover {
   color: #fff;
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 48px;
+.cv-summary {
   padding: 28px 0 56px;
 }
 
-.main-content,
-.sidebar section,
+.main-content {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  font-size: 1.05rem;
+}
+
 .post-list article,
 .timeline article {
   border-top: 1px solid var(--line);
 }
 
-.main-content {
-  font-size: 1.05rem;
-}
-
-.sidebar h2,
+.cv-summary h2,
 .section h2,
 .post-list h2,
 .post-list h3,
@@ -229,13 +226,17 @@ nav a:hover {
   line-height: 1.15;
 }
 
-.section h2,
-.sidebar h2 {
+.cv-summary h2,
+.section h2 {
   color: var(--accent);
 }
 
-.section h2::after,
-.sidebar h2::after {
+.cv-summary h2:not(:first-child) {
+  margin-top: 38px;
+}
+
+.cv-summary h2::after,
+.section h2::after {
   content: "";
   display: block;
   width: 44px;
@@ -460,11 +461,6 @@ nav a:hover {
 
   .hero-image {
     display: none;
-  }
-
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .section-heading {
