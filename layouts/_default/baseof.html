@@ -6,6 +6,7 @@
     <meta name="description" content="{{ site.Params.description }}">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
+    {{ partial "goat.html" . }}
   </head>
   <body>
     <header class="site-header">
