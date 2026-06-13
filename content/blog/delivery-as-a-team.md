@@ -1,100 +1,59 @@
 ---
-title: "Delivery Is A Team Behaviour, Not Just A Speed Problem"
+title: "Delivery Is a Team Behaviour, Not Just a Speed Problem"
 date: 2026-06-14
-summary: ""
-image: "/images/blog-default.svg"
-imageAlt: "Default image"
-draft: true
+summary: "Delivery improves when teams can surface problems together, finish the improvements they agree to, help each other when work gets stuck, and care enough to fix what slows everyone down"
+image: "delivery-as-team-behaviour.png"
+imageAlt: "Abstract workflow board with blockers being moved aside as a team creates a smoother delivery path"
+draft: false
 ---
 
-Most teams already know when delivery isn’t working.
+Your team already knows if delivery isn't working.
 
-They may not have the perfect language for it. They may talk around it. They may describe it as “too many interruptions”, “requirements keep changing”, “reviews take ages”, “we’re always waiting on X”, or “everything seems to land at the end”. But they usually know. The harder part is creating the conditions where they’ll say it in a room together, and then do something useful with what comes out.
+Maybe they don't know how to say it directly, or perhaps they just talk about the symptoms rather than the result. "Too many distractions", "Requirements keep changing after we've started", "Reviews take too long" or "We're constantly waiting for X". The hardest part is creating the conditions where they'll say it together, and do something useful to sort it out.
 
-I inherited a product engineering team once where this became very obvious very quickly.
+I once inherited a team where this was immediately obvious.
 
-In one-to-ones, people were open with me. They told me where the pain was. They talked about the things slowing them down, the frustrations they had with process, the places where communication was breaking down, and the bits of work that were harder than they needed to be. None of it sounded malicious. It sounded like a team full of people trying to do a decent job while carrying around a set of shared annoyances.
+In one-to-ones, people were mostly open with me. They told me where the pain was in their role, the things that slowed them down, the bits that were harder than they needed to be. Nothing particularly onerous in isolation, but together a large set of annoyances that each person held while trying to get a job done.
 
-Then we had a retro.
+Then we had our first team retro. Silence.
 
-Silence.
+Not the kind of silence where people are reflecting or deep in thought, but the kind where people want to be anywhere else but there. And they certainly don't want to be "that person" that calls out issues.
 
-Not thoughtful silence. Not “we’re reflecting deeply” silence. More the kind where everyone suddenly becomes fascinated by the wall, their shoes, or the exact spacing of the sticky notes.
+I was still the new guy and I had a bit of leeway - so I called it out. I honestly told them that every single person in that room had mentioned at least one team-level issue to me in my initial one-to-ones, and that a lot of them overlapped with the rest of their teammates, but unless we are willing to call them out in a group setting where we could actually get to fixing it the issues would remain. We ended the retro early, and resolved to come back a week later and do it again properly. Fully aware this was most likely a trust thing with a new manager, but that was an unacceptable start as far as I was concerned.
 
-So I called it out.
+The next retro went differently. A few minor issues were brought up. Still none of the "big" things from one-to-ones, but a few things where people were willing to at least speak up and bring something to the group. These were all small and innocuous enough that my response to them could be "So why don't we just NOT do this?". 
 
-I said, more or less, that every single person in the room had mentioned problems to me individually, and it would be useful if we could talk about some of them together. Not to blame anyone. Not to perform honesty for the sake of it. Just because private frustration doesn’t improve delivery. Shared problems need to become discussable before the team can do anything sensible about them.
+They looked at me as though I'd fallen out of a tree. "But this is how we've always done it" - you know the sort of comment. These are smart people, but it never seemed to occur to them that if they know what the issue is, they could just not do it.
 
-I don’t think they all knew everyone else was feeling the same things. That matters. When you think your problem is only yours, you manage it quietly. When you realise several other people are tripping over the same thing, it becomes easier to treat it as a system problem rather than a personal irritation.
+Following retros brought bigger issues, more contentious issues, and the occasional argument. But each raise led to a change, and each change led to more confidence to bring up problems that were hurting delivery. Even if that change was to change BACK to the thing we'd stopped doing two weeks prior as it was worse.
 
-The following retros changed. Not immediately into some perfect textbook ritual, but noticeably. More people spoke. The points raised were more specific. Actions became less vague. The team started to see that saying the uncomfortable thing could lead to something actually changing.
+It didn't take long before delivery improved. Fewer things stuck in review/test, more pairing, better communication before bugs snuck in, less failed deployments. All those things that DORA metrics catch but don't really explain, helped by retros where every post-it note became an honest conversation.
 
-That was a delivery improvement.
+DORA is a perfectly useful set of metrics in isolation, but they are diagnostic, not a scoreboard. If you start using it to compare two teams, or to chase a particular metric it's less useful, but when you can use it to show that your team is in a better place than it was 3 months ago, and these 6 things have changed, you know you're making a positive difference.
 
-It wouldn’t have shown up neatly in story points that week. It probably wouldn’t have moved a DORA metric by the next Friday. But it changed the team’s ability to improve itself, and that is one of the things I care about most when I’m trying to understand whether a team can deliver consistently.
+If you're just asking "why is this number lower than [some arbitrary baseline]", you're probably missing the point of the metric.
 
-I’m not against delivery metrics. DORA metrics can be useful. Throughput can be useful. Cycle time can be useful. Looking at how much work a team completes can tell you something, provided you understand the context.
+Sometimes delivery is slower because the build is slow, or the test environment implodes every day when the US team comes online and doubles workload in test, or Steve* insisted that his pet service needs to lock the entire DB every time it wants to query something. All technical problems that need a technical solution; they also need attention, but they're not the only things to fix.
 
-The trouble starts when those numbers become a management shortcut.
+Most of the time it's behavioural. Do you really need to fill out 3 slightly different Jira tickets in triplicate and get approval from 6 layers of management to change a config? Do you have to wait a week before a senior engineer can review your PR to fix a back office typo? Is Steve* refusing to approve any PRs for "his" project because he's using it as promotion fodder in the next round?
 
-Story points completed by Team A compared with story points completed by Team B tells you very little. Deployment frequency across two teams working in different systems, with different constraints and different product risks, can quickly become theatre. Even good metrics become poor management tools when they’re stripped of context and used to ask, “Why can’t this team just go faster?”
+Here's some useful metrics for any leader trying to improve delivery:
+- How many people contribute to your retros? Not just attend and nod, but actually put something into the mix?
+- How many retro actions get completed? Not just captured and assigned, but actually finished. Bonus metric - if they don't get finished, does anyone care?
+- How much does your team help each other on a difficult task, even at the expense of their own work?
+- How much work gets pushed into blocked and forgotten?
 
-A better question is: what is stopping this team from improving its own delivery?
+These aren't clean DORA-style metrics, and there is no perfect score for any of them - you need context of your team to know what "right" means. But I'm entirely confident that if you improve them, your delivery will improve as a result.
 
-Sometimes the answer is technical. The build is slow. The test suite is unreliable. The architecture makes small changes strangely expensive. The deployment process requires too much manual coordination. Those things are real, and they deserve attention.
+The teams I trust with pressure are the ones that have support patterns in place, and safety within the team to either notice or flag that something isn't right.
 
-But often the answer sits in the behaviour of the team.
+Another useful metric I've started using in recent months is number of side-quests. How many times does a member of your team stop their planned work to fix something that they've noticed is broken, or to help someone outside of the team to get something working, or to write some documentation because they've realised it's not clear.
 
-How many people contribute in retros? Not just attend, not just nod, but actually put something on the table.
+Again, this needs context - you can't have an entire sprint of side-quests and nothing else, and some periods need more of this type of work than others, but a team with NO side-quests? That's a giant red flag that says the team is either too focussed on the task at hand to the detriment of the bigger picture, or they just don't care.
 
-How many retro actions get completed? Not captured. Not assigned. Completed. And if they don’t get completed, does anyone care enough to ask why?
+The point is not to ignore delivery metrics, or to push them over issues your team are facing in the real world. The point is to understand what creates them.
 
-How often does work sit blocked while everyone politely pretends it’s still progressing?
+If people can raise potential problems early, finish any improvements they agree to, help each other when work gets stuck and care enough to fix things outside the narrow ticket in front of them, delivery usually improves. Not because someone shouted about speed, but because the team became better at actually working as a team.
 
-How often does someone step away from their own task to help another person get unstuck?
 
-How much pairing happens naturally, especially around risky or unfamiliar work?
-
-Who gives useful feedback in reviews, and who avoids the conversation until the pull request has become a negotiation over comments?
-
-How much work is in progress at once, and how much of it exists because starting something new feels easier than finishing something difficult?
-
-These are not always clean metrics. Some of them are more like signals. You need judgement around them. You can’t turn every human behaviour into a dashboard and expect the dashboard to tell the truth.
-
-But they tell you things that raw output often hides.
-
-A team can look busy while becoming fragile. You can have plenty of tickets moving and still have only one person who understands the release process. You can have high individual output while knowledge gets trapped in corners. You can complete a sprint and still be quietly accumulating resentment, rework, and unspoken risk.
-
-The teams I trust most under pressure tend to have visible support patterns. People notice when someone is stuck. They don’t treat helping as a distraction from delivery. They understand that if one person is carrying a problem alone for two days, the team is already paying for it, whether it appears on the board or not.
-
-I’m also interested in what I privately think of as side-quests.
-
-Someone spots a small piece of friction and fixes it. They improve a script. They tidy up a confusing bit of documentation. They remove a repeated manual step. They help another team with an awkward integration point because it keeps biting everyone. It may not be their assigned ticket. It may not be in the sprint goal. But it makes the system easier to work in.
-
-That behaviour tells me something important. It says people care about the environment they’re delivering in. It says they can see beyond their own task list. It says they believe making things better is allowed.
-
-There is a balance, of course. A team full of uncontrolled side-quests can lose focus. Product work still matters. Commitments still matter. You can’t have everyone wandering off to polish whichever inconvenience annoyed them most that morning.
-
-But when nobody ever does that work, you should worry. It often means people have learned to keep their heads down. They may be delivering tickets, but they’re no longer improving the conditions around delivery.
-
-The same applies to mentoring and feedback. These are easy to praise and hard to value properly.
-
-A senior engineer who helps two others make better decisions may appear slower on paper than someone who closes more tickets alone. A developer who takes the time to give direct, useful review feedback might reduce future rework in a way that never gets attributed back to them. Someone who asks the awkward question early can save the team from building the wrong thing very efficiently.
-
-If your measurement system only rewards visible individual output, don’t be surprised when collaboration starts to look optional.
-
-This is one reason I’m cautious when leaders ask why a team can’t simply go faster. Sometimes they can. Sometimes there is waste to remove, decisions to simplify, or technical drag to deal with. I’m not precious about pace. Product engineering teams exist to deliver useful change, and it’s fair to expect momentum.
-
-But sustainable pace usually comes from trust, clarity, and shared ownership. Not from squeezing the visible numbers until people learn how to make the numbers look better.
-
-The delivery measures I care about most are often the ones that show whether the team can respond well when things get messy. Because things will get messy. Requirements will change. Incidents will happen. Someone will misunderstand something. A dependency will slip. A customer will use the product in a way nobody expected.
-
-At that point, the question isn’t whether the team had a neat sprint report last month. It’s whether people tell the truth quickly. Whether they help each other. Whether they can disagree without turning it into politics. Whether they learn from the problem instead of hiding it.
-
-That’s where delivery really evolves.
-
-The obvious metrics still have a place. I’ll look at lead time, deployment frequency, escaped defects, throughput, and all the usual signals. But I want to read them alongside the less tidy evidence: the retro that actually changes something, the reduced work in progress, the pairing that spreads context, the review that improves the design, the side-quest that removes daily friction.
-
-None of those gives you a single clean answer. That’s probably why they’re easier to ignore.
-
-But if you’re managing a product engineering team and wondering why it can’t just go faster, it’s worth looking there first. The constraint may not be effort. It may be that the team hasn’t yet built the trust, habits, and shared responsibility that let speed become a result rather than a demand.
+*Steve is a fictional person not representative of a real issue - I'm not calling anyone out, even with a name change!
