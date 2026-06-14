@@ -56,4 +56,4 @@ The point is not to ignore delivery metrics, or to push them over issues your te
 If people can raise potential problems early, finish any improvements they agree to, help each other when work gets stuck and care enough to fix things outside the narrow ticket in front of them, delivery usually improves. Not because someone shouted about speed, but because the team became better at actually working as a team.
 
 
-*Steve is a fictional person not representative of a real issue - I'm not calling anyone out, even with a name change!
+_*Steve is a fictional person not representative of a real issue - I'm not calling anyone out, even with a name change!_
