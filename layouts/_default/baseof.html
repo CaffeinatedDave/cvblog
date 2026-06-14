@@ -1,25 +1,36 @@
 <!doctype html>
-<html lang="{{ site.Language.Lang }}">
+<html lang="{{ site.Language.Lang }}" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.Params.description }}">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+    <script>
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = storedTheme || (prefersDark ? 'dark' : 'light');
+    </script>
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
     {{ partial "goat.html" . }}
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <nav id="main-navigation" aria-label="Main navigation">
         <a href="{{ "/" | relURL }}">CV</a>
         <a href="{{ "/blog/" | relURL }}">Blog</a>
         <a href="{{ "/bookshelf/" | relURL }}">Bookshelf</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Use dark mode">
+          <span class="theme-toggle-sun" aria-hidden="true"></span>
+          <span class="theme-toggle-moon" aria-hidden="true"></span>
+        </button>
       </nav>
     </header>
     <main>
