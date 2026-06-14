@@ -7,8 +7,7 @@
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
     <script>
       const storedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.dataset.theme = storedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.dataset.theme = storedTheme || 'light';
     </script>
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
     {{ partial "goat.html" . }}
