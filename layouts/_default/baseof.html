@@ -10,6 +10,7 @@
       document.documentElement.dataset.theme = storedTheme || 'light';
     </script>
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
+    {{ block "head" . }}{{ end }}
     {{ partial "goat.html" . }}
   </head>
   <body>
@@ -25,6 +26,7 @@
       <nav id="main-navigation" aria-label="Main navigation">
         <a href="{{ "/" | relURL }}">CV</a>
         <a href="{{ "/blog/" | relURL }}">Blog</a>
+        <a href="{{ "/one-offs/" | relURL }}">One-offs</a>
         <a href="{{ "/bookshelf/" | relURL }}">Bookshelf</a>
         <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Use dark mode">
           <span class="theme-toggle-sun" aria-hidden="true"></span>
@@ -41,4 +43,3 @@
     <script src="{{ "js/navigation.js" | relURL }}?v={{ site.Params.assetVersion }}"></script>
   </body>
 </html>
-

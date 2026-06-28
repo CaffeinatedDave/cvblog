@@ -1,0 +1,31 @@
+{{ define "head" }}
+  {{ if not hugo.IsServer }}
+    <script>
+      window.goatcounter = window.goatcounter || {};
+      window.goatcounter.path = function () {
+        return '/404' + window.location.pathname + window.location.search;
+      };
+      window.goatcounter.title = function () {
+        return '404: ' + window.location.pathname + window.location.search;
+      };
+      window.goatcounter.referrer = function () {
+        return document.referrer || '';
+      };
+    </script>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+<section class="page-heading">
+  <p class="eyebrow">Page not found</p>
+  <h1>That page is not here</h1>
+  <p class="intro">The link may be wrong, old, or still waiting to be written.</p>
+</section>
+
+<section class="section">
+  <div class="contact-links">
+    <a href="{{ "/" | relURL }}">Back to CV</a>
+    <a href="{{ "/blog/" | relURL }}">Read the blog</a>
+  </div>
+</section>
+{{ end }}

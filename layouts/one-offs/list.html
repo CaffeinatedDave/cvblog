@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page-heading projects-heading">
+  <p class="eyebrow">Small useful things</p>
+  <h1>{{ .Title }}</h1>
+  <p class="intro">{{ .Params.summary }}</p>
+</section>
+
+<section class="project-grid" aria-label="One-off projects">
+  {{ range .Pages.ByWeight }}
+    <article class="project-card">
+      <p class="project-card-kicker">{{ .Params.kicker | default "Single page app" }}</p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Params.summary }}</p>
+      <a class="project-card-link" href="{{ .RelPermalink }}">Open project</a>
+    </article>
+  {{ end }}
+</section>
+{{ end }}

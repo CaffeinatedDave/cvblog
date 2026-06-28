@@ -3,7 +3,7 @@ locale = "en-gb"
 title = "Dave Chaston"
 
 [params]
-  assetVersion = "20260614-8"
+  assetVersion = "20260622-4"
   description = "CV, portfolio, and musings."
   author = "Dave Chaston"
   email = "dave@caffeinateddave.com"
@@ -18,4 +18,3 @@ title = "Dave Chaston"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
