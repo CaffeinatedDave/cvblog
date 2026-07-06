@@ -7,7 +7,6 @@ imageAlt: "An abstract AI accelerator racing toward a risky path while review ch
 draft: false
 ---
 
-
 Most AI that I've used so far can be considered accelerators. Whether it's producing the first draft of a document, proofreading a document before publishing, summarising someone else's document into bullet points for easier reading, writing boilerplate code or filling out the test coverage with cases I might've missed or not bothered with for the sake of time - they take a process that might take an hour and get it done in seconds.
 
 That's a genuinely useful thing.

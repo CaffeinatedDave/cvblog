@@ -1,14 +1,36 @@
 <!doctype html>
 <html lang="{{ site.Language.Lang }}" data-theme="light">
   <head>
+    {{ $description := .Params.summary | default site.Params.description }}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.Params.description }}">
+    <meta name="description" content="{{ $description }}">
+    <meta name="theme-color" content="#0e4749">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+    <meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ site.Title }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}">
+    <meta name="twitter:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    {{ with .Params.image }}
+      {{ $ogImage := printf "images/blog/%s" . | absURL }}
+      <meta property="og:image" content="{{ $ogImage }}">
+      <meta property="og:image:secure_url" content="{{ $ogImage }}">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1672">
+      <meta property="og:image:height" content="941">
+      <meta property="og:image:alt" content="{{ $.Params.imageAlt | default $.Title }}">
+      <meta name="twitter:image" content="{{ $ogImage }}">
+      <meta name="twitter:image:alt" content="{{ $.Params.imageAlt | default $.Title }}">
+    {{ end }}
     <script>
       const storedTheme = localStorage.getItem('theme');
       document.documentElement.dataset.theme = storedTheme || 'light';
     </script>
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v={{ site.Params.assetVersion }}">
     {{ block "head" . }}{{ end }}
     {{ partial "goat.html" . }}
