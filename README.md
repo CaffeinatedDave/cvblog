@@ -11,6 +11,8 @@ This is a small Hugo static site for a CV, profile, and blog. It is designed so 
 
 Blog posts are sorted by date automatically. Newer posts appear first and get URLs from their title/date.
 
+Project-specific instructions for Codex and other coding agents live in `AGENTS.md`, including the house rules for generated blog images.
+
 ## Add A Blog Post
 
 Run:
