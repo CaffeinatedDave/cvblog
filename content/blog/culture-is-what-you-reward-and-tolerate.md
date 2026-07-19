@@ -4,7 +4,7 @@ date: 2026-07-19
 summary: "Culture is shaped less by the values on the wall than by the behaviour leaders reward, the work they make invisible, and the things they quietly allow to continue."
 image: "culture-reward-and-tolerate.png"
 imageAlt: "Two abstract scales — one lit and elevated, one dimmed and low — above a team of small figures, with a potted plant in the corner"
-draft: true
+draft: false
 ---
 
 Culture is often defined as that thing people do when nobody is watching.
