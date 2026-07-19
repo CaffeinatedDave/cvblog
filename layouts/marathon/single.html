@@ -1,0 +1,114 @@
+{{ define "main" }}
+<article class="marathon-page">
+  <header class="page-heading marathon-heading">
+    <p class="eyebrow">{{ .Params.kicker }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="intro">{{ .Params.summary }}</p>
+    <div class="marathon-actions">
+      {{ with .Params.fundraisingUrl }}
+        <a class="marathon-button" href="{{ . }}" target="_new">Sponsor the run</a>
+      {{ else }}
+        <span class="marathon-button marathon-button-muted">Fundraising link coming soon</span>
+      {{ end }}
+      {{ with .Params.stravaProfileUrl }}
+        <a class="marathon-link" href="{{ . }}" target="_new">Strava profile</a>
+      {{ end }}
+    </div>
+  </header>
+
+  <section class="marathon-overview" aria-label="Marathon preparation status">
+    {{ range .Params.stats }}
+      <div class="marathon-stat">
+        <span>{{ .label }}</span>
+        <strong>{{ .value }}</strong>
+      </div>
+    {{ end }}
+  </section>
+
+  <section class="marathon-section marathon-story">
+    <div class="marathon-copy">
+      {{ .Content }}
+    </div>
+    <aside class="marathon-load" aria-label="Training load snapshot">
+      <h2>Training load</h2>
+      <div class="load-grid">
+        {{ range .Params.trainingLoad.metrics }}
+          <div>
+            <span>{{ .label }}</span>
+            <strong>{{ .value }}</strong>
+            {{ if .diff }}
+              <span class="load-diff">{{ .diff }} vs 7d ago</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+      <p>Updated {{ .Params.trainingLoad.updated }}</p>
+    </aside>
+  </section>
+
+  <section class="marathon-section">
+    <div class="section-heading">
+      <h2>Upcoming events</h2>
+      <p>{{ .Params.eventsNote }}</p>
+    </div>
+    <div class="event-list">
+      {{ range .Params.events }}
+        <article class="event-card">
+          <p class="event-date">{{ .date }}</p>
+          <h3>{{ .name }}</h3>
+          <p>{{ .distance }} · {{ .status }}</p>
+          {{ with .note }}<p>{{ . }}</p>{{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="marathon-section">
+    <div class="section-heading">
+      <h2>Training plan</h2>
+      <p>{{ .Params.planNote }}</p>
+    </div>
+    <div class="plan-grid">
+      {{ range .Params.plan }}
+        <article class="plan-card{{ if .active }} plan-card-active{{ end }}">
+          {{ if .active }}<p class="plan-status">Current focus</p>{{ end }}
+          <p class="plan-window">{{ .window }}</p>
+          <h3>{{ .phase }}</h3>
+          <p>{{ .focus }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="marathon-section">
+    <div class="section-heading">
+      <h2>Recent activities</h2>
+      <p>{{ .Params.activitiesNote }}</p>
+    </div>
+    <div class="activity-table" role="table" aria-label="Recent training activities">
+      <div class="activity-row activity-head" role="row">
+        <span role="columnheader">Date</span>
+        <span role="columnheader">Session</span>
+        <span role="columnheader">Distance</span>
+        <span role="columnheader">Link</span>
+      </div>
+      {{ range .Params.activities }}
+        {{ $activityTitle := .title }}
+        <div class="activity-row" role="row">
+          <span role="cell" data-label="Date">{{ .date }}</span>
+          <span role="cell" data-label="Session">{{ .title }}</span>
+          <span role="cell" data-label="Distance">{{ .distance }}</span>
+          <span role="cell" data-label="Link">
+            {{ with .stravaUrl }}
+              <a href="{{ . }}" target="_new">Strava</a>
+            {{ else }}
+              Pending
+            {{ end }}
+          </span>
+          {{ with .desc }}<span class="activity-description" role="cell" data-label="Description">{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{ end }}
