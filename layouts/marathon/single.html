@@ -53,11 +53,25 @@
     </div>
     <div class="event-list">
       {{ range .Params.events }}
-        <article class="event-card">
-          <p class="event-date">{{ .date }}</p>
+        <article class="event-card{{ if .completed }} event-card-completed{{ end }}">
+          <div class="event-card-topline">
+            {{ if .completed }}<p class="event-status">Completed</p>{{ end }}
+            <p class="event-date">{{ .date }}</p>
+          </div>
           <h3>{{ .name }}</h3>
-          <p>{{ .distance }} · {{ .status }}</p>
+          {{ if .completed }}
+            {{ with .result }}
+              <div class="event-result">
+                <span>Finish time</span>
+                <strong>{{ . }}</strong>
+              </div>
+            {{ end }}
+            <p>{{ .distance }}</p>
+          {{ else }}
+            <p>{{ .distance }} · {{ .status }}</p>
+          {{ end }}
           {{ with .note }}<p>{{ . }}</p>{{ end }}
+          {{ with .stravaUrl }}<a class="event-link" href="{{ . }}" target="_new">View on Strava</a>{{ end }}
         </article>
       {{ end }}
     </div>
@@ -128,9 +142,12 @@
       });
       
       // State management
-      let currentMonth = new Date(2026, 6); // Start at July 2026
       const minDate = new Date(2026, 6); // July 2026
       const maxDate = new Date(2027, 3); // April 2027
+      const today = new Date();
+      let currentMonth = new Date(today.getFullYear(), today.getMonth());
+      if (currentMonth < minDate) currentMonth = minDate;
+      if (currentMonth > maxDate) currentMonth = maxDate;
       
       function updateNavButtons() {
         const prevBtn = document.getElementById('prev-month');
