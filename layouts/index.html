@@ -21,13 +21,6 @@
   <article class="main-content">
     {{ .Content }}
 
-    <h2>Highlights</h2>
-    <ul>
-      {{ range .Params.highlights }}
-        <li>{{ . }}</li>
-      {{ end }} 
-    </ul>
-
     <h2>Core Skills</h2>
     <ul class="tag-list">
       {{ range .Params.skills }}
@@ -35,29 +28,6 @@
       {{ end }}
     </ul>
   </article>
-</section>
-
-<section class="section">
-  <h2>Experience</h2>
-  <div class="timeline">
-    {{ range .Params.experience }}
-      <article>
-        <h3 class="company">{{ .company }}</h3>
-        {{ range .roles }}
-          <p class="title">{{ .title }}</p>
-          <p class="location">{{ .location }}</p>
-          <p class="date">{{ .dates }}</p>
-          {{ if .details }}
-          <ul>
-            {{ range .details }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          {{ end }}
-        {{ end }}
-      </article>
-    {{ end }}
-  </div>
 </section>
 
 <section class="section">
