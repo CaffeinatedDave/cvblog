@@ -23,7 +23,7 @@ stats:
         desc: "Under 5 hours"
 
 trainingLoad:
-  updated: "Sunday 16th August"
+  updated: "Sunday 23rd August"
   note: "Recovery from knee injury"
   metrics:
     - label: "CTL"
