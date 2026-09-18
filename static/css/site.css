@@ -226,7 +226,6 @@ html[data-theme="dark"] .theme-toggle-moon {
 .hero h1,
 .page-heading h1,
 .article h1 {
-  max-width: 820px;
   color: var(--headers);
   margin: 0;
   font-size: clamp(44px, 7vw, 84px);
@@ -417,7 +416,6 @@ html[data-theme="dark"] .theme-toggle-moon {
 }
 
 .intro {
-  max-width: 720px;
   color: var(--muted);
   font-size: 1.12rem;
 }
@@ -732,7 +730,6 @@ html[data-theme="dark"] .theme-toggle-moon {
 }
 
 .marathon-heading {
-  max-width: 880px;
 }
 
 .marathon-actions {
@@ -914,16 +911,9 @@ html[data-theme="dark"] .theme-toggle-moon {
 }
 
 .event-card-completed {
-  border-color: var(--accent-dark);
-  border-top: 0;
-  background:
-    linear-gradient(135deg, rgba(237, 217, 163, 0.48), rgba(255, 255, 255, 0) 42%),
-    var(--card-bg);
-  box-shadow: 0 12px 28px var(--shadow);
-}
-
-.event-card-completed h3 {
-  color: var(--accent-dark);
+  border-color: var(--line);
+  background: var(--card-bg);
+  box-shadow: none;
 }
 
 .event-status {
@@ -942,12 +932,99 @@ html[data-theme="dark"] .theme-toggle-moon {
   text-transform: uppercase;
 }
 
+.event-flip-shell {
+  position: relative;
+  margin-top: 16px;
+  perspective: 1100px;
+}
+
+.event-flip-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.event-flip-card {
+  min-height: 276px;
+}
+
+.event-flip-inner {
+  position: relative;
+  min-height: 276px;
+  transition: transform 420ms ease;
+  transform-style: preserve-3d;
+}
+
+.event-flip-toggle:checked + .event-flip-card .event-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.event-flip-toggle:focus-visible + .event-flip-card .event-flip-face {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 3px;
+}
+
+.event-flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  min-height: 276px;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  backface-visibility: hidden;
+}
+
+.event-flip-front {
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-dark);
+  font-weight: 850;
+  text-align: center;
+  cursor: pointer;
+}
+
+.event-flip-front img {
+  display: block;
+  width: auto;
+  max-width: min(176px, 100%);
+  max-height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(14, 71, 73, 0.2));
+}
+
+.event-flip-back {
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.event-flip-back-action {
+  align-self: center;
+  margin-bottom: 10px;
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.event-medal-details {
+  margin-top: 16px;
+}
+
+html[data-theme="dark"] .event-flip-face {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .event-result {
   display: grid;
   gap: 2px;
-  margin: 16px 0;
-  border-left: 4px solid var(--accent-dark);
-  padding: 10px 0 10px 14px;
+  margin: 16px 0 18px;
 }
 
 .event-result span {

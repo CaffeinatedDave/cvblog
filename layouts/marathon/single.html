@@ -5,11 +5,7 @@
     <h1>{{ .Title }}</h1>
     <p class="intro">{{ .Params.summary }}</p>
     <div class="marathon-actions">
-      {{ with .Params.fundraisingUrl }}
-        <a class="marathon-button" href="{{ . }}" target="_new">Sponsor the run</a>
-      {{ else }}
-        <span class="marathon-button marathon-button-muted">Fundraising link coming soon</span>
-      {{ end }}
+      <a class="marathon-button" href="{{ .Params.fundraisingUrl }}" target="_new">Sponsor the run - Latest Total: <span>{{ .Params.fundraisingTotal }} / {{ .Params.fundraisingTarget }}</span></a>
       {{ with .Params.stravaProfileUrl }}
         <a class="marathon-link" href="{{ . }}" target="_new">Strava profile</a>
       {{ end }}
@@ -52,26 +48,52 @@
       <p>{{ .Params.eventsNote }}</p>
     </div>
     <div class="event-list">
-      {{ range .Params.events }}
+      {{ range $index, $event := .Params.events }}
         <article class="event-card{{ if .completed }} event-card-completed{{ end }}">
           <div class="event-card-topline">
-            {{ if .completed }}<p class="event-status">Completed</p>{{ end }}
+            {{ if and .completed (not .medalImage) }}<p class="event-status">Completed</p>{{ end }}
             <p class="event-date">{{ .date }}</p>
           </div>
           <h3>{{ .name }}</h3>
-          {{ if .completed }}
-            {{ with .result }}
-              <div class="event-result">
-                <span>Finish time</span>
-                <strong>{{ . }}</strong>
+          {{ if and .completed .medalImage }}
+            {{ $flipId := printf "event-medal-%d" $index }}
+            <div class="event-flip-shell">
+              <input class="event-flip-toggle" id="{{ $flipId }}" type="checkbox" aria-label="Turn over {{ .name }} medal card">
+              <div class="event-flip-card">
+                <div class="event-flip-inner">
+                  <label class="event-flip-face event-flip-front" for="{{ $flipId }}">
+                    <img src="{{ .medalImage | relURL }}" alt="{{ .medalAlt | default (printf "%s medal" .name) }}">
+                    <span>Turn over for result</span>
+                  </label>
+                  <div class="event-flip-face event-flip-back">
+                    <label class="event-flip-back-action" for="{{ $flipId }}">Back to medal</label>
+                    {{ with .result }}
+                      <div class="event-result">
+                        <span>Finish time</span>
+                        <strong>{{ . }}</strong>
+                      </div>
+                    {{ end }}
+                    {{ with .stravaUrl }}<a class="event-link" href="{{ . }}" target="_new">View on Strava</a>{{ end }}
+                  </div>
+                </div>
               </div>
-            {{ end }}
-            <p>{{ .distance }}</p>
+            </div>
+          {{ else if .completed }}
+            <div class="event-medal-details">
+              {{ with .result }}
+                <div class="event-result">
+                  <span>Finish time</span>
+                  <strong>{{ . }}</strong>
+                </div>
+              {{ end }}
+              <p>{{ .distance }}</p>
+              {{ with .note }}<p>{{ . }}</p>{{ end }}
+              {{ with .stravaUrl }}<a class="event-link" href="{{ . }}" target="_new">View on Strava</a>{{ end }}
+            </div>
           {{ else }}
             <p>{{ .distance }} · {{ .status }}</p>
+            {{ with .note }}<p>{{ . }}</p>{{ end }}
           {{ end }}
-          {{ with .note }}<p>{{ . }}</p>{{ end }}
-          {{ with .stravaUrl }}<a class="event-link" href="{{ . }}" target="_new">View on Strava</a>{{ end }}
         </article>
       {{ end }}
     </div>
