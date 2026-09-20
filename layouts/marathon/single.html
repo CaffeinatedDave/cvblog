@@ -69,7 +69,7 @@
                     <label class="event-flip-back-action" for="{{ $flipId }}">Back to medal</label>
                     {{ with .result }}
                       <div class="event-result">
-                        <span>Finish time</span>
+                        <span>{{ $event.resultLabel | default "Finish time" }}</span>
                         <strong>{{ . }}</strong>
                       </div>
                     {{ end }}
